@@ -68,11 +68,12 @@ struct ContentView: View {
                 HStack {
                     Text("Yap 🍅")
                         .font(.largeTitle)
-                        .padding(.bottom, 30)
                         .alignmentGuide(.leading) { d in d[.leading] }
 
                     Spacer()
                 }
+                
+                Spacer()
 
                 ZStack {
                     VStack {
@@ -107,6 +108,9 @@ struct ContentView: View {
                         .frame(width: 240, height: 240)
 
                 }
+                
+                Spacer()
+                
 
                 HStack {
                     Text("Work: \(Int(timerLength/60)) min")
