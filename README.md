@@ -18,8 +18,9 @@ This is a learning project for now, but if you want to contribute, feel free to 
 - [ ] Code cleanup
 - [ ] Make it work in the background
 - [ ] Add notifications
-- [ ] Implement better design
+- [ ] Implement better design according to Apple guidelines
 - [ ] Add iOS widget for timer
+- [ ] Add watchOS version
 - [ ] (?) Add macOS version
 - [ ] (?) Add iCloud timer sync between devices
 - [ ] Add tests
