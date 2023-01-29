@@ -19,10 +19,18 @@
 		4AAD1EDD29856A15009F54D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4AAD1EDF29856A18009F54D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AAD1EE229856A18009F54D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4AAD1EED2985BEAD009F54D8 /* Yap Desktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yap Desktop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4AAD1ED529856A15009F54D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AAD1EEA2985BEAD009F54D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				4AAD1ED829856A15009F54D8 /* Yap.app */,
+				4AAD1EED2985BEAD009F54D8 /* Yap Desktop.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +96,23 @@
 			productReference = 4AAD1ED829856A15009F54D8 /* Yap.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4AAD1EEC2985BEAD009F54D8 /* Yap Desktop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AAD1EF92985BEB0009F54D8 /* Build configuration list for PBXNativeTarget "Yap Desktop" */;
+			buildPhases = (
+				4AAD1EE92985BEAD009F54D8 /* Sources */,
+				4AAD1EEA2985BEAD009F54D8 /* Frameworks */,
+				4AAD1EEB2985BEAD009F54D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Yap Desktop";
+			productName = "Yap Desktop";
+			productReference = 4AAD1EED2985BEAD009F54D8 /* Yap Desktop.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -98,6 +124,9 @@
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					4AAD1ED729856A15009F54D8 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					4AAD1EEC2985BEAD009F54D8 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -116,6 +145,7 @@
 			projectRoot = "";
 			targets = (
 				4AAD1ED729856A15009F54D8 /* Yap */,
+				4AAD1EEC2985BEAD009F54D8 /* Yap Desktop */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +160,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4AAD1EEB2985BEAD009F54D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -139,6 +176,13 @@
 			files = (
 				4AAD1EDE29856A15009F54D8 /* ContentView.swift in Sources */,
 				4AAD1EDC29856A15009F54D8 /* YapApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AAD1EE92985BEAD009F54D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +361,64 @@
 			};
 			name = Release;
 		};
+		4AAD1EFA2985BEB0009F54D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Yap Desktop/Yap_Desktop.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Yap Desktop/Preview Content\"";
+				DEVELOPMENT_TEAM = C5PH84MWHF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "notfullin.com.Yap-Desktop";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4AAD1EFB2985BEB0009F54D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Yap Desktop/Yap_Desktop.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Yap Desktop/Preview Content\"";
+				DEVELOPMENT_TEAM = C5PH84MWHF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "notfullin.com.Yap-Desktop";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -334,6 +436,15 @@
 			buildConfigurations = (
 				4AAD1EE729856A18009F54D8 /* Debug */,
 				4AAD1EE829856A18009F54D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AAD1EF92985BEB0009F54D8 /* Build configuration list for PBXNativeTarget "Yap Desktop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AAD1EFA2985BEB0009F54D8 /* Debug */,
+				4AAD1EFB2985BEB0009F54D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
