@@ -7,6 +7,8 @@
 
 import AVFoundation
 import SwiftUI
+import UIKit
+import UserNotifications
 
 struct ContentView: View {
 
@@ -14,12 +16,13 @@ struct ContentView: View {
     @State private var breakLength: Float = 5 * 60
     @State private var currentTime: Float = 25 * 60
     @State private var isRunning = false
-    @State private var isTimer: Bool = true
+    @State private var isStarted = false
     @State private var previousIsRunning = false
     @State private var isBreak: Bool = false
     @State private var soundID: Int = 1013
     @State private var isHapticsEnabled: Bool = true
     @State private var isSoundEnabled: Bool = true
+    @State private var pomodoros = [String]()
 
     enum HapticStyle {
         case light
@@ -53,6 +56,17 @@ struct ContentView: View {
         }
     }
 
+    func requestAuthorization() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if granted {
+                print("Notification authorization granted.")
+            }
+            else {
+                print("Notification authorization denied.")
+            }
+        }
+    }
+
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     let gradient = AngularGradient(
@@ -61,18 +75,12 @@ struct ContentView: View {
     )
 
     var body: some View {
+
         ZStack {
             Color(red: 15 / 255, green: 70 / 255, blue: 50 / 255)
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                HStack {
-                    Text("Yap 🍅")
-                        .font(.largeTitle)
-                        .alignmentGuide(.leading) { d in d[.leading] }
 
-                    Spacer()
-                }
-                
                 Spacer()
 
                 ZStack {
@@ -81,9 +89,7 @@ struct ContentView: View {
                             currentTime != timerLength
                                 ? "\(Int((currentTime/60).rounded(.up)))" : "\(Int((timerLength/60).rounded(.up)))"
                         )
-                        .font(.system(size: 104))
-
-                        //Text(isTimer ? "minutes" : "minutes left")
+                        .font(.system(size: 160, weight: .thin))
                     }
 
                     Circle()
@@ -108,11 +114,27 @@ struct ContentView: View {
                         .frame(width: 240, height: 240)
 
                 }
-                
-                Spacer()
-                
 
                 HStack {
+                    if pomodoros.count > 0 {
+                        Text(pomodoros.joined(separator: " "))
+                    }
+
+                    if self.isRunning {
+                        if !self.isBreak {
+                            Text("🍅").opacity(0.6)
+                        }
+                        else {
+                            Text("☕️").opacity(0.6)
+                        }
+                    }
+
+                }.padding(.top, 1).font(.system(size: 36))
+
+                Spacer()
+
+                HStack {
+
                     Text("Work: \(Int(timerLength/60)) min")
                         .frame(minWidth: 120, alignment: .leading)
 
@@ -149,17 +171,35 @@ struct ContentView: View {
 
                 Spacer()
 
-                Button(action: {
-                    self.isRunning.toggle()
-                    if self.isRunning {
-                        UIApplication.shared.isIdleTimerDisabled = true
+                HStack {
+                    Button(action: {
+                        self.isRunning.toggle()
+                        self.isStarted.toggle()
+                        if self.isRunning {
+                            UIApplication.shared.isIdleTimerDisabled = true
+                        }
+                        else {
+                            UIApplication.shared.isIdleTimerDisabled = false
+                        }
+                    }) {
+                        Text(self.isRunning || self.isStarted ? "Stop" : "Start").font(.system(size: 24))
+                    }.padding(.trailing).padding(.bottom, 30)
+
+                    if self.isStarted {
+                        Button(action: {
+                            self.isRunning.toggle()
+                            if self.isRunning {
+                                UIApplication.shared.isIdleTimerDisabled = true
+                            }
+                            else {
+                                UIApplication.shared.isIdleTimerDisabled = false
+                            }
+                        }) {
+                            Text(isRunning ? "Pause" : "Continue").font(.system(size: 24))
+                        }.padding(.bottom, 30)
                     }
-                    else {
-                        UIApplication.shared.isIdleTimerDisabled = false
-                    }
-                }) {
-                    Text(isRunning ? "Stop" : "Start")
-                }.padding(.bottom, 30)
+
+                }
 
             }.onReceive(timer) { _ in
                 guard self.isRunning else { return }
@@ -170,12 +210,14 @@ struct ContentView: View {
                 else {
                     if self.isBreak {
                         playSound()
-                        self.isTimer.toggle()
-                        self.currentTime = self.isTimer ? self.timerLength : self.breakLength
+                        self.isBreak = false
+                        self.pomodoros.append("☕️")
+                        self.currentTime = self.timerLength
                     }
                     else {
                         playSound()
                         self.isBreak = true
+                        self.pomodoros.append("🍅")
                         self.currentTime = self.breakLength
                     }
 
@@ -183,6 +225,40 @@ struct ContentView: View {
             }.onReceive([self.isRunning].publisher.first()) { (value) in print("New value is: \(value)")
 
                 let _ = print("Time: \(currentTime)")
+                if !previousIsRunning && value {
+                    self.requestAuthorization()
+                    previousIsRunning = value
+                    print("Scheduled notification")
+                    let content = UNMutableNotificationContent()
+                    content.title = "Timer Finished"
+                    content.subtitle = "Your pomodoro timer has finished"
+                    content.sound = UNNotificationSound.default
+
+                    // show this notification five seconds from now
+                    let trigger = UNTimeIntervalNotificationTrigger(
+                        timeInterval: Double(self.currentTime),
+                        repeats: false
+                    )
+
+                    // Create the request
+                    let uuidString = UUID().uuidString
+                    let request = UNNotificationRequest(
+                        identifier: uuidString,
+                        content: content,
+                        trigger: trigger
+                    )
+
+                    // Schedule the request with the system.
+                    let notificationCenter = UNUserNotificationCenter.current()
+                    notificationCenter.add(request) { (error) in
+                        print("Notification request added")
+                        if error != nil {
+                            print("Error occured: ")
+                            print(error)
+                        }
+
+                    }
+                }
                 if previousIsRunning && !value {
                     previousIsRunning = value
                 }
