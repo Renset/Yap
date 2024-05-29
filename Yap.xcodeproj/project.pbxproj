@@ -7,16 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2569C9672C06964F002F8BB4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569C9662C06964F002F8BB4 /* HomeViewModel.swift */; };
+		2569C9692C069673002F8BB4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569C9682C069673002F8BB4 /* HomeView.swift */; };
+		2569C96B2C06972F002F8BB4 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569C96A2C06972F002F8BB4 /* BackgroundView.swift */; };
+		25EA908E2C073E7D00F459C3 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EA908D2C073E7D00F459C3 /* ClockView.swift */; };
+		25EA90922C07401600F459C3 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EA90912C07401600F459C3 /* SetupView.swift */; };
+		25EA90942C0740DC00F459C3 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EA90932C0740DC00F459C3 /* ButtonView.swift */; };
+		25EA90962C0743A900F459C3 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EA90952C0743A900F459C3 /* TextView.swift */; };
 		4AAD1EDC29856A15009F54D8 /* YapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD1EDB29856A15009F54D8 /* YapApp.swift */; };
-		4AAD1EDE29856A15009F54D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD1EDD29856A15009F54D8 /* ContentView.swift */; };
 		4AAD1EE029856A18009F54D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAD1EDF29856A18009F54D8 /* Assets.xcassets */; };
 		4AAD1EE329856A18009F54D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAD1EE229856A18009F54D8 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2569C9662C06964F002F8BB4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2569C9682C069673002F8BB4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2569C96A2C06972F002F8BB4 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		25EA908D2C073E7D00F459C3 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		25EA90912C07401600F459C3 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		25EA90932C0740DC00F459C3 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		25EA90952C0743A900F459C3 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		4AAD1ED829856A15009F54D8 /* Yap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AAD1EDB29856A15009F54D8 /* YapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YapApp.swift; sourceTree = "<group>"; };
-		4AAD1EDD29856A15009F54D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4AAD1EDF29856A18009F54D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AAD1EE229856A18009F54D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4AAD1EED2985BEAD009F54D8 /* Yap Desktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yap Desktop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +52,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2569C9622C0694E8002F8BB4 /* UI Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2569C96A2C06972F002F8BB4 /* BackgroundView.swift */,
+				25EA908D2C073E7D00F459C3 /* ClockView.swift */,
+				25EA90952C0743A900F459C3 /* TextView.swift */,
+				25EA90912C07401600F459C3 /* SetupView.swift */,
+				25EA90932C0740DC00F459C3 /* ButtonView.swift */,
+			);
+			path = "UI Modules";
+			sourceTree = "<group>";
+		};
 		4AAD1ECF29856A15009F54D8 = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				4AAD1EDB29856A15009F54D8 /* YapApp.swift */,
-				4AAD1EDD29856A15009F54D8 /* ContentView.swift */,
+				2569C9682C069673002F8BB4 /* HomeView.swift */,
+				2569C9662C06964F002F8BB4 /* HomeViewModel.swift */,
+				2569C9622C0694E8002F8BB4 /* UI Modules */,
 				4AAD1EDF29856A18009F54D8 /* Assets.xcassets */,
 				4AAD1EE129856A18009F54D8 /* Preview Content */,
 			);
@@ -121,7 +147,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					4AAD1ED729856A15009F54D8 = {
 						CreatedOnToolsVersion = 14.2;
@@ -174,8 +200,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AAD1EDE29856A15009F54D8 /* ContentView.swift in Sources */,
+				2569C96B2C06972F002F8BB4 /* BackgroundView.swift in Sources */,
+				25EA908E2C073E7D00F459C3 /* ClockView.swift in Sources */,
+				25EA90942C0740DC00F459C3 /* ButtonView.swift in Sources */,
+				25EA90922C07401600F459C3 /* SetupView.swift in Sources */,
 				4AAD1EDC29856A15009F54D8 /* YapApp.swift in Sources */,
+				25EA90962C0743A900F459C3 /* TextView.swift in Sources */,
+				2569C9692C069673002F8BB4 /* HomeView.swift in Sources */,
+				2569C9672C06964F002F8BB4 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +257,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -285,6 +318,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -311,9 +345,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Yap/Preview Content\"";
-				DEVELOPMENT_TEAM = C5PH84MWHF;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Yap;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -341,9 +377,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Yap/Preview Content\"";
-				DEVELOPMENT_TEAM = C5PH84MWHF;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Yap;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -372,11 +410,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Yap Desktop/Preview Content\"";
 				DEVELOPMENT_TEAM = C5PH84MWHF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Yap;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -401,11 +442,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Yap Desktop/Preview Content\"";
 				DEVELOPMENT_TEAM = C5PH84MWHF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Yap;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
