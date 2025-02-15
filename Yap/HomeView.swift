@@ -2,75 +2,116 @@
 //  HomeView.swift
 //  Yap
 //
-//  Created by Timo Köthe on 29.05.24.
+//  Created by TT on 31/04/24.
 //
+
 
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject private var vm = HomeViewModel()
+    @EnvironmentObject var timerDataVM : TimerDataViewModel
+    @State var navigateToTimerView     : Bool = false
+    @State var presentAddTaskView      : Bool = false
+    @State var navigateToHistory       : Bool = false
     
     var body: some View {
-        ZStack {
-            // Background with specified color
-            BackgroundView(red: 15 / 255, green: 70 / 255, blue: 50 / 255)
-            
-            // Foreground
-            Group {
-                VStack {
-                    Spacer()
-                    ClockView()
-                    TextView()
-                    SetupView()
-                    Spacer()
-                    ButtonView()
-                }
-            }
-            .environmentObject(vm)
-            .padding(.leading, 30)
-            .padding(.trailing, 30)
-            .frame(maxWidth: 500, maxHeight: .infinity)
-            .foregroundColor(.white)
-            .onReceive(vm.timer) { _ in
-                guard vm.isRunning else { return }
-                let _ = print("test")
-                if vm.currentTime > 0 {
-                    vm.currentTime -= 1
-                } else {
-                    if vm.isBreak {
-                        vm.playSound()
-                        vm.isBreak = false
-                        vm.pomodoros.append("☕️")
-                        vm.currentTime = vm.timerLength
-                    } else {
-                        vm.playSound()
-                        vm.isBreak = true
-                        vm.pomodoros.append("🍅")
-                        vm.currentTime = vm.breakLength
+        GeometryReader { geometryProxy in
+            VStack(spacing: 0){
+                //Header View
+                GlobalHeaderView(isBackButton: false, title: "Home", onHistoryButtonPress: {
+                    navigateToHistory = true
+                })
+                
+                if !timerDataVM.taskList.isEmpty{
+                    //List Content.
+                    List(timerDataVM.taskList,id: \.self){ list in
+                        HStack{
+                            VStack(alignment: .leading,spacing: 6){
+                                Text(list.title)
+                                    .font(.title)
+                                    .fontWeight(.medium)
+                                    .foregroundStyle(Color.black)
+                                
+                                Text(list.taskDescription)
+                                    .font(.system(size: 14))
+                                    .fontWeight(.regular)
+                                    .foregroundStyle(Color.black.opacity(0.8))
+                                
+                            }
+                            .padding([.horizontal,.vertical], 10)
+                            
+                            Spacer()
+                            
+                            Text(list.duration.toTimeString())
+                                .font(.system(size: 14))
+                                .fontWeight(.semibold)
+                                .foregroundStyle(Color.black)
+                                .listRowBackground(Color.clear)
+                                .padding(.trailing, 10)
+                        }
+                        .background(Color(hex: "#F3B817"))
+                        .listRowBackground(Color.clear)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .listRowSeparator(.hidden)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            timerDataVM.selectedTask = list
+                            navigateToTimerView = true
+                        }
                     }
+                    .background(Color(hex: "#CAF0F8"))
+                    .listStyle(.plain)
+                    .shadow(color: Color.gray.opacity(0.3), radius: 10, x: 0, y: 5)
+                }else{
+                    Spacer()
+                    Text("No Records Found. Please click '+' Add Task Button to Add New Task.")
+                        .padding(.horizontal, 40)
+                        .multilineTextAlignment(.center)
+                    Spacer()
                 }
             }
-            .onReceive([vm.isRunning].publisher.first()) { (value) in print("New value is: \(value)")
-                let _ = print("Time: \(vm.currentTime)")
-                if !vm.previousIsRunning && value {
-                    vm.requestAuthorization()
-                    vm.previousIsRunning = value
-                    print("Scheduled notification")
-                    vm.scheduleNotification()
-                }
-                if vm.previousIsRunning && !value {
-                    vm.previousIsRunning = value
-                } else {
-                    vm.runHapticFeedback(withStyle: .light)
-                }
+            .ignoresSafeArea()
+            .frame(width: geometryProxy.size.width, height: geometryProxy.size.height)
+            .background(Color(hex: "#CAF0F8")) // View Background color.
+            .overlay(alignment: .bottomTrailing){
+                AddTaskButtonView()
             }
         }
-        .preferredColorScheme(.dark)
+        .onAppear {
+            timerDataVM.fetchAllTableRecords()
+        }
+        .navigationDestination(isPresented: $navigateToTimerView) {
+            TimerView()
+        }
+        .navigationDestination(isPresented: $navigateToHistory) {
+            HistoryView()
+                .navigationBarBackButtonHidden()
+        }
+        .fullScreenCover(isPresented: $presentAddTaskView) {
+            AddTaskView(addTaskView: $presentAddTaskView)
+        }
+    }
+    
+    func AddTaskButtonView() -> some View{
+        return Button {
+            presentAddTaskView = true
+        } label: {
+            Image(systemName: "plus")
+                .font(.system(size: 24, weight: .bold))
+                .foregroundColor(.black)
+                .frame(width: 60, height: 60)
+                .background(Color.white)
+                .clipShape(Circle())
+                .overlay(
+                    Circle()
+                        .stroke(Color.gray.opacity(0.3), lineWidth: 2)
+                )
+                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+        }
+        .padding([.vertical,.horizontal], 20)
     }
 }
 
-struct HomeView_Preview: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
+#Preview {
+    HomeView()
 }

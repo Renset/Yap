@@ -9,35 +9,42 @@ import SwiftUI
 
 struct ButtonView: View {
     @EnvironmentObject private var vm: HomeViewModel
+    @EnvironmentObject private var timerDataVM: TimerDataViewModel
     
     var body: some View {
         HStack {
             Button(action: {
-                vm.isRunning.toggle()
-                vm.isStarted.toggle()
-                if vm.isRunning {
-                    UIApplication.shared.isIdleTimerDisabled = true
-                }
-                else {
-                    UIApplication.shared.isIdleTimerDisabled = false
+//                vm.isRunning.toggle()
+//                vm.isStarted.toggle()
+//                if vm.isRunning {
+//                    UIApplication.shared.isIdleTimerDisabled = true
+//                }
+//                else {
+//                    UIApplication.shared.isIdleTimerDisabled = false
+//                }
+                if timerDataVM.timer?.isStopped ?? true {
+                    timerDataVM.startTimer(duration: timerDataVM.selectedTask?.duration ?? 0)
+                }else{
+                    timerDataVM.stopTimer()
                 }
             }) {
-                Text(vm.isRunning || vm.isStarted ? "Stop" : "Start").font(.system(size: 24))
+                Text(timerDataVM.timer?.isStopped ?? true ? "Start" : "Stop").font(.system(size: 24))
             }.padding(.trailing).padding(.bottom, 30)
 
-            if vm.isStarted {
-                Button(action: {
-                    vm.isRunning.toggle()
-                    if vm.isRunning {
-                        UIApplication.shared.isIdleTimerDisabled = true
-                    }
-                    else {
-                        UIApplication.shared.isIdleTimerDisabled = false
-                    }
-                }) {
-                    Text(vm.isRunning ? "Pause" : "Continue").font(.system(size: 24))
-                }.padding(.bottom, 30)
-            }
+//            if timerDataVM.timer?.isStopped ?? true {
+//                Button(action: {
+////                    vm.isRunning.toggle()
+//                    timerDataVM.pauseTimer()
+////                    if vm.isRunning {
+////                        UIApplication.shared.isIdleTimerDisabled = true
+////                    }
+////                    else {
+////                        UIApplication.shared.isIdleTimerDisabled = false
+////                    }
+//                }) {
+//                    Text(timerDataVM.timer?.isStopped ?? true ? "Pause" : "Continue").font(.system(size: 24))
+//                }.padding(.bottom, 30)
+//            }
         }
     }
 }

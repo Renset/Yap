@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2569C9672C06964F002F8BB4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569C9662C06964F002F8BB4 /* HomeViewModel.swift */; };
-		2569C9692C069673002F8BB4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569C9682C069673002F8BB4 /* HomeView.swift */; };
+		2569C9692C069673002F8BB4 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569C9682C069673002F8BB4 /* TimerView.swift */; };
 		2569C96B2C06972F002F8BB4 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569C96A2C06972F002F8BB4 /* BackgroundView.swift */; };
 		25EA908E2C073E7D00F459C3 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EA908D2C073E7D00F459C3 /* ClockView.swift */; };
 		25EA90922C07401600F459C3 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EA90912C07401600F459C3 /* SetupView.swift */; };
@@ -17,11 +17,31 @@
 		4AAD1EDC29856A15009F54D8 /* YapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD1EDB29856A15009F54D8 /* YapApp.swift */; };
 		4AAD1EE029856A18009F54D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAD1EDF29856A18009F54D8 /* Assets.xcassets */; };
 		4AAD1EE329856A18009F54D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AAD1EE229856A18009F54D8 /* Preview Assets.xcassets */; };
+		9995F0DD2D59154000F85CBD /* TextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9995F0DC2D59154000F85CBD /* TextExtension.swift */; };
+		9995F1F62D59188600F85CBD /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9995F1F52D59188600F85CBD /* TimerManager.swift */; };
+		99F1DFA42D4D304B00BC31D9 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1DFA32D4D304B00BC31D9 /* SplashView.swift */; };
+		99F1DFA62D4D356500BC31D9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1DFA52D4D356500BC31D9 /* ColorExtension.swift */; };
+		99F1DFA92D4D3F5800BC31D9 /* Yap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99F1DFA72D4D3F5800BC31D9 /* Yap.xcdatamodeld */; };
+		99F1DFAB2D4D3F8300BC31D9 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1DFAA2D4D3F8300BC31D9 /* PersistenceController.swift */; };
+		99F1E0A12D4D42B100BC31D9 /* HistoryEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E0A02D4D42B100BC31D9 /* HistoryEntry+CoreDataProperties.swift */; };
+		99F1E0A22D4D42B100BC31D9 /* HistoryEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E09F2D4D42B100BC31D9 /* HistoryEntry+CoreDataClass.swift */; };
+		99F1E1A62D4D486B00BC31D9 /* TaskEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E1A42D4D486B00BC31D9 /* TaskEntry+CoreDataClass.swift */; };
+		99F1E1A72D4D486B00BC31D9 /* TaskEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E1A52D4D486B00BC31D9 /* TaskEntry+CoreDataProperties.swift */; };
+		99F1E1A92D4DD1B000BC31D9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E1A82D4DD1B000BC31D9 /* HomeView.swift */; };
+		99F1E1AB2D4DD27B00BC31D9 /* GlobalHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E1AA2D4DD27B00BC31D9 /* GlobalHeaderView.swift */; };
+		99F1E1AD2D4DDCED00BC31D9 /* HistoryEntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E1AC2D4DDCED00BC31D9 /* HistoryEntryManager.swift */; };
+		99F1E1AF2D4DDCFC00BC31D9 /* TaskEntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E1AE2D4DDCFC00BC31D9 /* TaskEntryManager.swift */; };
+		99F1E2A12D4DE49E00BC31D9 /* HistoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E2A02D4DE49E00BC31D9 /* HistoryDataModel.swift */; };
+		99F1E2A32D4DE5EB00BC31D9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E2A22D4DE5EB00BC31D9 /* StringExtension.swift */; };
+		99F1E3972D4DFB3100BC31D9 /* TimerDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E3962D4DFB3100BC31D9 /* TimerDataViewModel.swift */; };
+		99F1E3992D4F2D6000BC31D9 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E3982D4F2D6000BC31D9 /* TimeIntervalExtension.swift */; };
+		99F1E39B2D4F2E6700BC31D9 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E39A2D4F2E6700BC31D9 /* HistoryView.swift */; };
+		99F1E39D2D4F45AD00BC31D9 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1E39C2D4F45AD00BC31D9 /* AddTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2569C9662C06964F002F8BB4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		2569C9682C069673002F8BB4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2569C9682C069673002F8BB4 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		2569C96A2C06972F002F8BB4 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		25EA908D2C073E7D00F459C3 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		25EA90912C07401600F459C3 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -32,6 +52,27 @@
 		4AAD1EDF29856A18009F54D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AAD1EE229856A18009F54D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4AAD1EED2985BEAD009F54D8 /* Yap Desktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yap Desktop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9995F0DC2D59154000F85CBD /* TextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtension.swift; sourceTree = "<group>"; };
+		9995F1F52D59188600F85CBD /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		99A5C2062D46A7C600C2DA23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99F1DFA32D4D304B00BC31D9 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		99F1DFA52D4D356500BC31D9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		99F1DFA82D4D3F5800BC31D9 /* Yap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Yap.xcdatamodel; sourceTree = "<group>"; };
+		99F1DFAA2D4D3F8300BC31D9 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		99F1E09F2D4D42B100BC31D9 /* HistoryEntry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		99F1E0A02D4D42B100BC31D9 /* HistoryEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		99F1E1A42D4D486B00BC31D9 /* TaskEntry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		99F1E1A52D4D486B00BC31D9 /* TaskEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		99F1E1A82D4DD1B000BC31D9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		99F1E1AA2D4DD27B00BC31D9 /* GlobalHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHeaderView.swift; sourceTree = "<group>"; };
+		99F1E1AC2D4DDCED00BC31D9 /* HistoryEntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntryManager.swift; sourceTree = "<group>"; };
+		99F1E1AE2D4DDCFC00BC31D9 /* TaskEntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntryManager.swift; sourceTree = "<group>"; };
+		99F1E2A02D4DE49E00BC31D9 /* HistoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataModel.swift; sourceTree = "<group>"; };
+		99F1E2A22D4DE5EB00BC31D9 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		99F1E3962D4DFB3100BC31D9 /* TimerDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDataViewModel.swift; sourceTree = "<group>"; };
+		99F1E3982D4F2D6000BC31D9 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
+		99F1E39A2D4F2E6700BC31D9 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		99F1E39C2D4F45AD00BC31D9 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				2569C96A2C06972F002F8BB4 /* BackgroundView.swift */,
+				99F1E1AA2D4DD27B00BC31D9 /* GlobalHeaderView.swift */,
 				25EA908D2C073E7D00F459C3 /* ClockView.swift */,
 				25EA90952C0743A900F459C3 /* TextView.swift */,
 				25EA90912C07401600F459C3 /* SetupView.swift */,
@@ -85,10 +127,18 @@
 			isa = PBXGroup;
 			children = (
 				4AAD1EDB29856A15009F54D8 /* YapApp.swift */,
-				2569C9682C069673002F8BB4 /* HomeView.swift */,
-				2569C9662C06964F002F8BB4 /* HomeViewModel.swift */,
+				99F1DFA32D4D304B00BC31D9 /* SplashView.swift */,
+				99F1E1A82D4DD1B000BC31D9 /* HomeView.swift */,
+				99F1E39A2D4F2E6700BC31D9 /* HistoryView.swift */,
+				99F1E39C2D4F45AD00BC31D9 /* AddTaskView.swift */,
+				2569C9682C069673002F8BB4 /* TimerView.swift */,
 				2569C9622C0694E8002F8BB4 /* UI Modules */,
+				99F1E2A62D4DF21900BC31D9 /* ViewModels */,
+				99A5C2052D46A42A00C2DA23 /* Utilities */,
+				99F1E29F2D4DE41000BC31D9 /* DataModels */,
+				99F1E19A2D4D460A00BC31D9 /* DatabaseModels */,
 				4AAD1EDF29856A18009F54D8 /* Assets.xcassets */,
+				99A5C2062D46A7C600C2DA23 /* Info.plist */,
 				4AAD1EE129856A18009F54D8 /* Preview Content */,
 			);
 			path = Yap;
@@ -100,6 +150,50 @@
 				4AAD1EE229856A18009F54D8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		99A5C2052D46A42A00C2DA23 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				99F1DFA52D4D356500BC31D9 /* ColorExtension.swift */,
+				99F1E2A22D4DE5EB00BC31D9 /* StringExtension.swift */,
+				99F1E3982D4F2D6000BC31D9 /* TimeIntervalExtension.swift */,
+				9995F0DC2D59154000F85CBD /* TextExtension.swift */,
+				9995F1F52D59188600F85CBD /* TimerManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		99F1E19A2D4D460A00BC31D9 /* DatabaseModels */ = {
+			isa = PBXGroup;
+			children = (
+				99F1DFAA2D4D3F8300BC31D9 /* PersistenceController.swift */,
+				99F1E1AE2D4DDCFC00BC31D9 /* TaskEntryManager.swift */,
+				99F1E1AC2D4DDCED00BC31D9 /* HistoryEntryManager.swift */,
+				99F1E1A42D4D486B00BC31D9 /* TaskEntry+CoreDataClass.swift */,
+				99F1E1A52D4D486B00BC31D9 /* TaskEntry+CoreDataProperties.swift */,
+				99F1E09F2D4D42B100BC31D9 /* HistoryEntry+CoreDataClass.swift */,
+				99F1E0A02D4D42B100BC31D9 /* HistoryEntry+CoreDataProperties.swift */,
+				99F1DFA72D4D3F5800BC31D9 /* Yap.xcdatamodeld */,
+			);
+			path = DatabaseModels;
+			sourceTree = "<group>";
+		};
+		99F1E29F2D4DE41000BC31D9 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				99F1E2A02D4DE49E00BC31D9 /* HistoryDataModel.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		99F1E2A62D4DF21900BC31D9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2569C9662C06964F002F8BB4 /* HomeViewModel.swift */,
+				99F1E3962D4DFB3100BC31D9 /* TimerDataViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,13 +295,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				2569C96B2C06972F002F8BB4 /* BackgroundView.swift in Sources */,
+				9995F0DD2D59154000F85CBD /* TextExtension.swift in Sources */,
 				25EA908E2C073E7D00F459C3 /* ClockView.swift in Sources */,
 				25EA90942C0740DC00F459C3 /* ButtonView.swift in Sources */,
+				99F1E1AD2D4DDCED00BC31D9 /* HistoryEntryManager.swift in Sources */,
+				99F1DFAB2D4D3F8300BC31D9 /* PersistenceController.swift in Sources */,
+				99F1E2A12D4DE49E00BC31D9 /* HistoryDataModel.swift in Sources */,
+				99F1E1AF2D4DDCFC00BC31D9 /* TaskEntryManager.swift in Sources */,
+				99F1E39B2D4F2E6700BC31D9 /* HistoryView.swift in Sources */,
+				99F1E3992D4F2D6000BC31D9 /* TimeIntervalExtension.swift in Sources */,
+				99F1E1AB2D4DD27B00BC31D9 /* GlobalHeaderView.swift in Sources */,
+				9995F1F62D59188600F85CBD /* TimerManager.swift in Sources */,
 				25EA90922C07401600F459C3 /* SetupView.swift in Sources */,
+				99F1E1A92D4DD1B000BC31D9 /* HomeView.swift in Sources */,
+				99F1E3972D4DFB3100BC31D9 /* TimerDataViewModel.swift in Sources */,
 				4AAD1EDC29856A15009F54D8 /* YapApp.swift in Sources */,
+				99F1E1A62D4D486B00BC31D9 /* TaskEntry+CoreDataClass.swift in Sources */,
+				99F1E1A72D4D486B00BC31D9 /* TaskEntry+CoreDataProperties.swift in Sources */,
 				25EA90962C0743A900F459C3 /* TextView.swift in Sources */,
-				2569C9692C069673002F8BB4 /* HomeView.swift in Sources */,
+				99F1DFA92D4D3F5800BC31D9 /* Yap.xcdatamodeld in Sources */,
+				2569C9692C069673002F8BB4 /* TimerView.swift in Sources */,
+				99F1E0A12D4D42B100BC31D9 /* HistoryEntry+CoreDataProperties.swift in Sources */,
+				99F1E0A22D4D42B100BC31D9 /* HistoryEntry+CoreDataClass.swift in Sources */,
 				2569C9672C06964F002F8BB4 /* HomeViewModel.swift in Sources */,
+				99F1DFA42D4D304B00BC31D9 /* SplashView.swift in Sources */,
+				99F1E2A32D4DE5EB00BC31D9 /* StringExtension.swift in Sources */,
+				99F1DFA62D4D356500BC31D9 /* ColorExtension.swift in Sources */,
+				99F1E39D2D4F45AD00BC31D9 /* AddTaskView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,12 +456,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Yap/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Yap/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yap;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -363,6 +478,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = notfullin.com.Yap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -374,12 +490,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Yap/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Yap/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yap;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -395,6 +512,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = notfullin.com.Yap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -496,6 +614,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		99F1DFA72D4D3F5800BC31D9 /* Yap.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				99F1DFA82D4D3F5800BC31D9 /* Yap.xcdatamodel */,
+			);
+			currentVersion = 99F1DFA82D4D3F5800BC31D9 /* Yap.xcdatamodel */;
+			path = Yap.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4AAD1ED029856A15009F54D8 /* Project object */;
 }

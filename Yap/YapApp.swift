@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct YapApp: App {
+    let persistenceController = PersistenceController.shared
+    @StateObject var timerDataViewModel = TimerDataViewModel()
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            SplashView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(timerDataViewModel)
         }
     }
 }

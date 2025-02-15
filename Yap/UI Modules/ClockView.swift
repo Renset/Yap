@@ -9,15 +9,19 @@ import SwiftUI
 
 struct ClockView: View {
     @EnvironmentObject private var vm: HomeViewModel
+    @EnvironmentObject private var timerDataVM : TimerDataViewModel
     
     var body: some View {
         ZStack {
             // Digit Counter
-            Text(
-                vm.currentTime != vm.timerLength
-                ? "\(Int((vm.currentTime/60).rounded(.up)))" : "\(Int((vm.timerLength/60).rounded(.up)))"
-            )
-            .font(.system(size: 160, weight: .thin))
+//            Text(
+//                vm.currentTime != vm.timerLength
+//                ? "\(Int((vm.currentTime/60).rounded(.up)))" : "\(Int((vm.timerLength/60).rounded(.up)))"
+//            )
+//            .font(.system(size: 160, weight: .thin))
+            
+            Text.timeFormatter(from: timerDataVM.remainingTime,placeholderText: "Completed!")
+                .font(.system(size: 40, weight: .thin))
             
             // Circle Counter
             Group {
@@ -30,7 +34,7 @@ struct ClockView: View {
                 Circle()
                     .trim(
                         from: 0,
-                        to: CGFloat(((vm.currentTime).truncatingRemainder(dividingBy: 60) - 0.25) / 60)
+                        to: CGFloat(((timerDataVM.remainingTime).truncatingRemainder(dividingBy: 60) - 0.25) / 60)
                     )
                     .rotation(.degrees(-90))
                     .stroke(
@@ -39,6 +43,9 @@ struct ClockView: View {
                     )
             }
             .frame(width: 240, height: 240)
+        }
+        .onReceive(timerDataVM.$remainingTime) { timer in
+            print(timer)
         }
     }
 }
